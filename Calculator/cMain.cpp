@@ -1,8 +1,8 @@
 #include "cMain.h"
 
-cMain::cMain() : wxFrame(nullptr, wxID_ANY, "Calculator!", wxPoint(500, 200), wxSize(400, 500))
+cMain::cMain() : wxFrame(nullptr, wxID_ANY, "Calculator!", wxPoint(500, 200), wxSize(355, 500))
 {
-	m_Txt1 = new wxTextCtrl(this, wxID_ANY, "0", wxPoint(10, 15), wxSize(365, 70),wxTE_RIGHT);
+	m_Txt1 = new wxTextCtrl(this, wxID_ANY, "0", wxPoint(10, 15), wxSize(320, 70),wxTE_RIGHT);
 	m_Txt1->Disable();
 	num1 = new wxButton(this, wxID_ANY, "1", wxPoint(10,300), wxSize(80,80));
 	num2 = new wxButton(this, wxID_ANY, "2", wxPoint(90,300), wxSize(80,80));
