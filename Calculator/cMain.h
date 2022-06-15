@@ -8,7 +8,7 @@ public:
 	~cMain();
 
 public:
-	//buttons for number
+	//buttons for numbers
 	wxButton* num1 = nullptr;
 	wxButton* num2 = nullptr;
 	wxButton* num3 = nullptr;
@@ -22,5 +22,18 @@ public:
 
 	//Text Box
 	wxTextCtrl* m_Txt1 = nullptr;
+
+	//Buttons for other
+	wxButton* addButton = nullptr;
+	wxButton* subButton = nullptr;
+	wxButton* multButton = nullptr;
+	wxButton* divButton = nullptr;
+	wxButton* equButton = nullptr;
+	wxButton* clearButton = nullptr;
+	wxButton* modButton = nullptr;
+	wxButton* binButton = nullptr;
+	wxButton* hexButton = nullptr;
+	wxButton* decButton = nullptr;
+	
 };
 
