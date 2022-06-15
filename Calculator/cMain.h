@@ -34,6 +34,7 @@ public:
 	wxButton* binButton = nullptr;
 	wxButton* hexButton = nullptr;
 	wxButton* decButton = nullptr;
+	wxButton* negativeButton = nullptr;
 	
 };
 
