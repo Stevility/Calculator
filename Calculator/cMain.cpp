@@ -11,6 +11,10 @@ EVT_BUTTON(7, ButtonClick7)
 EVT_BUTTON(8, ButtonClick8)
 EVT_BUTTON(9, ButtonClick9)
 EVT_BUTTON(0, ButtonClick0)
+EVT_BUTTON(100, ButtonClickAdd)
+EVT_BUTTON(200, ButtonClickSub)
+EVT_BUTTON(300, ButtonClickMult)
+EVT_BUTTON(400, ButtonClickDiv)
 wxEND_EVENT_TABLE()
 
 cMain::cMain() : wxFrame(nullptr, wxID_ANY, "Calculator!", wxPoint(500, 200), wxSize(355, 500))
@@ -36,10 +40,10 @@ cMain::cMain() : wxFrame(nullptr, wxID_ANY, "Calculator!", wxPoint(500, 200), wx
 	hexButton = new wxButton(this, wxID_ANY, "Hex", wxPoint(250, 380), wxSize(80, 33));
 	binButton = new wxButton(this, wxID_ANY, "Binary", wxPoint(250, 412), wxSize(80, 33));
 
-	addButton = new wxButton(this, wxID_ANY, "+", wxPoint(250, 90), wxSize(80, 65));
-	subButton = new wxButton(this, wxID_ANY, "-", wxPoint(250, 155), wxSize(80, 65));
-	divButton = new wxButton(this, wxID_ANY, "/", wxPoint(250, 220), wxSize(80, 65));
-	multButton = new wxButton(this, wxID_ANY, "X", wxPoint(250, 285), wxSize(80, 65));
+	addButton = new wxButton(this, 100, "+", wxPoint(250, 90), wxSize(80, 65));
+	subButton = new wxButton(this, 200, "-", wxPoint(250, 155), wxSize(80, 65));
+	divButton = new wxButton(this, 300, "/", wxPoint(250, 220), wxSize(80, 65));
+	multButton = new wxButton(this, 400, "X", wxPoint(250, 285), wxSize(80, 65));
 }
 
 cMain::~cMain()
@@ -94,4 +98,52 @@ void cMain::ButtonClick9(wxCommandEvent& evt)
 void cMain::ButtonClick0(wxCommandEvent& evt)
 {
 	m_Txt1->AppendText("0");
+}
+
+void cMain::ButtonClickAdd(wxCommandEvent& evt)
+{
+	m_Txt1->AppendText("+");
+}
+
+void cMain::ButtonClickSub(wxCommandEvent& evt)
+{
+	m_Txt1->AppendText("-");
+}
+
+void cMain::ButtonClickDiv(wxCommandEvent& evt)
+{
+	m_Txt1->AppendText("X");
+}
+
+void cMain::ButtonClickMult(wxCommandEvent& evt)
+{
+	m_Txt1->AppendText("/");
+}
+
+void cMain::ButtonClickEqual(wxCommandEvent& evt)
+{
+}
+
+void cMain::ButtonClickClear(wxCommandEvent& evt)
+{
+}
+
+void cMain::ButtonClickMod(wxCommandEvent& evt)
+{
+}
+
+void cMain::ButtonClickBin(wxCommandEvent& evt)
+{
+}
+
+void cMain::ButtonClickHex(wxCommandEvent& evt)
+{
+}
+
+void cMain::ButtonClickDec(wxCommandEvent& evt)
+{
+}
+
+void cMain::ButtonClickNegative(wxCommandEvent& evt)
+{
 }

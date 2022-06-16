@@ -46,7 +46,18 @@ public:
 	wxButton* hexButton = nullptr;
 	wxButton* decButton = nullptr;
 	wxButton* negativeButton = nullptr;
-	
+	//Clicked other Event
+	void ButtonClickAdd(wxCommandEvent& evt);
+	void ButtonClickSub(wxCommandEvent& evt);
+	void ButtonClickDiv(wxCommandEvent& evt);
+	void ButtonClickMult(wxCommandEvent& evt);
+	void ButtonClickEqual(wxCommandEvent& evt);
+	void ButtonClickClear(wxCommandEvent& evt);
+	void ButtonClickMod(wxCommandEvent& evt);
+	void ButtonClickBin(wxCommandEvent& evt);
+	void ButtonClickHex(wxCommandEvent& evt);
+	void ButtonClickDec(wxCommandEvent& evt);
+	void ButtonClickNegative(wxCommandEvent& evt);
 
 
 	wxDECLARE_EVENT_TABLE();
