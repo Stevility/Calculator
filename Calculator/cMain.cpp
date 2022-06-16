@@ -11,10 +11,15 @@ EVT_BUTTON(7, ButtonClick7)
 EVT_BUTTON(8, ButtonClick8)
 EVT_BUTTON(9, ButtonClick9)
 EVT_BUTTON(0, ButtonClick0)
+
+
 EVT_BUTTON(100, ButtonClickAdd)
 EVT_BUTTON(200, ButtonClickSub)
 EVT_BUTTON(300, ButtonClickMult)
 EVT_BUTTON(400, ButtonClickDiv)
+
+
+EVT_BUTTON(1000, ButtonClickClear)
 wxEND_EVENT_TABLE()
 
 cMain::cMain() : wxFrame(nullptr, wxID_ANY, "Calculator!", wxPoint(500, 200), wxSize(355, 500))
@@ -32,7 +37,7 @@ cMain::cMain() : wxFrame(nullptr, wxID_ANY, "Calculator!", wxPoint(500, 200), wx
 	num9 = new wxButton(this, 9, "9", wxPoint(170,140), wxSize(80, 80));
 	num0 = new wxButton(this, 0, "0", wxPoint(10,380), wxSize(160, 65));
 
-	clearButton = new wxButton(this, wxID_ANY, "Clear", wxPoint(10, 90), wxSize(80, 50));
+	clearButton = new wxButton(this, 1000, "Clear", wxPoint(10, 90), wxSize(80, 50));
 	negativeButton = new wxButton(this, wxID_ANY, "+/-", wxPoint(90, 90), wxSize(80, 50));
 	decButton = new wxButton(this, wxID_ANY, "0.01", wxPoint(170, 90), wxSize(80, 50));
 	equButton = new wxButton(this, wxID_ANY, "=", wxPoint(170, 380), wxSize(80, 65));
@@ -126,6 +131,7 @@ void cMain::ButtonClickEqual(wxCommandEvent& evt)
 
 void cMain::ButtonClickClear(wxCommandEvent& evt)
 {
+	m_Txt1->Clear();
 }
 
 void cMain::ButtonClickMod(wxCommandEvent& evt)
