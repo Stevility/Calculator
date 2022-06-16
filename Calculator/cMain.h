@@ -19,6 +19,17 @@ public:
 	wxButton* num8 = nullptr;
 	wxButton* num9 = nullptr;
 	wxButton* num0 = nullptr;
+	//Clicked number Event
+	void ButtonClick1(wxCommandEvent& evt);
+	void ButtonClick2(wxCommandEvent& evt);
+	void ButtonClick3(wxCommandEvent& evt);
+	void ButtonClick4(wxCommandEvent& evt);
+	void ButtonClick5(wxCommandEvent& evt);
+	void ButtonClick6(wxCommandEvent& evt);
+	void ButtonClick7(wxCommandEvent& evt);
+	void ButtonClick8(wxCommandEvent& evt);
+	void ButtonClick9(wxCommandEvent& evt);
+	void ButtonClick0(wxCommandEvent& evt);
 
 	//Text Box
 	wxTextCtrl* m_Txt1 = nullptr;
@@ -36,5 +47,8 @@ public:
 	wxButton* decButton = nullptr;
 	wxButton* negativeButton = nullptr;
 	
+
+
+	wxDECLARE_EVENT_TABLE();
 };
 
