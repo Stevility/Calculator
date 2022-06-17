@@ -19,6 +19,7 @@ public:
 	wxButton* num8 = nullptr;
 	wxButton* num9 = nullptr;
 	wxButton* num0 = nullptr;
+
 	//Clicked number Event
 	void ButtonClick1(wxCommandEvent& evt);
 	void ButtonClick2(wxCommandEvent& evt);
@@ -46,6 +47,7 @@ public:
 	wxButton* hexButton = nullptr;
 	wxButton* decButton = nullptr;
 	wxButton* negativeButton = nullptr;
+
 	//Clicked other Event
 	void ButtonClickAdd(wxCommandEvent& evt);
 	void ButtonClickSub(wxCommandEvent& evt);
