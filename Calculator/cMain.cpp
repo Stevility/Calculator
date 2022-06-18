@@ -25,6 +25,8 @@ wxEND_EVENT_TABLE()
 
 cMain::cMain() : wxFrame(nullptr, wxID_ANY, "Calculator!", wxPoint(500, 200), wxSize(355, 500))
 {
+	ButtonFactory factory;
+
 	m_Txt1 = new wxTextCtrl(this, wxID_ANY, "", wxPoint(10, 15), wxSize(320, 70),wxTE_RIGHT);
 	m_Txt1->Disable();
 	num1 = new wxButton(this, 1, "1", wxPoint(10,300), wxSize(80,80));
