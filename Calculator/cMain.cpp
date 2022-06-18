@@ -1,4 +1,5 @@
 #include "cMain.h"
+#include "ButtonFactory.h"
 
 wxBEGIN_EVENT_TABLE(cMain, wxFrame)
 EVT_BUTTON(1, ButtonClick1)
