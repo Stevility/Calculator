@@ -30,15 +30,6 @@ void cMain::CreateButtons()
 		allButtons[ButtonFactory::IDs::Div]->Enable();
 		allButtons[ButtonFactory::IDs::Mod]->Enable();
 	}
-	else
-	{
-		allButtons[ButtonFactory::IDs::Add]->Disable();
-		allButtons[ButtonFactory::IDs::Sub]->Disable();
-		allButtons[ButtonFactory::IDs::Mult]->Disable();
-		allButtons[ButtonFactory::IDs::Div]->Disable();
-		allButtons[ButtonFactory::IDs::Mod]->Disable();
-	}
-
 }
 
 void cMain::ButtonClicked(wxCommandEvent& evt)

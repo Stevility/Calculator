@@ -156,7 +156,7 @@ public:
 
 	wxButton* createModButton(wxWindow* Window)
 	{
-		wxButton* modButton = new wxButton(Window, IDs::Mod, "Mod", wxPoint(250, 350), wxSize(80, 30));
+		wxButton* modButton = new wxButton(Window, IDs::Mod, " % ", wxPoint(250, 350), wxSize(80, 30));
 		return modButton;
 	}
 

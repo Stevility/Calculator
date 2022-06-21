@@ -11,6 +11,11 @@ CalculatorProcessor* CalculatorProcessor::GetInstance()
 	return _processor;
 }
 
+void CalculatorProcessor::SetBaseNumber(int number)
+{
+	left = number;
+}
+
 int CalculatorProcessor::OP(cMain* window)
 {
 	equation = window->m_Txt1->GetLineText(0).ToStdString();
@@ -99,7 +104,7 @@ void CalculatorProcessor::Mod()
 void CalculatorProcessor::Negative(cMain* window)
 {
 	int operationLocation = OP(window);
-	int posOfNegate = equation.find("FlipSign");
+	int posOfNegate = equation.find("+/-");
 	if (posOfNegate == 0)
 	{
 		window->m_Txt1->Clear();
@@ -148,11 +153,10 @@ std::string CalculatorProcessor::Equal(cMain* window)
 	{
 		Divide();
 	}
-	else if (operation == "%")
+	else if (operation == " % ")
 	{
 		Mod();
 	}
-	window->m_Txt1->Clear();
 	if (answer == "Can't divide by zero")
 	{
 		operation = "";
@@ -175,8 +179,11 @@ void CalculatorProcessor::GetDecimal(cMain* window)
 void CalculatorProcessor::GetBinary(cMain* window)
 {
 	std::string result = "";
+	std::string BNumber = "";
 	if (answer == "")
 	{
+		window->m_Txt1->Clear();
+		window->m_Txt1->AppendText("Must enter number");
 		return;
 	}
 	int number = std::stoi(answer);
