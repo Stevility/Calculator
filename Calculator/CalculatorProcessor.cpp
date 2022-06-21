@@ -103,32 +103,32 @@ void CalculatorProcessor::Mod()
 
 void CalculatorProcessor::Negative(cMain* window)
 {
-	int operationLocation = OP(window);
-	int posOfNegate = equation.find("+/-");
-	if (posOfNegate == 0)
+	int op = OP(window);
+	int Negate = equation.find("+/-");
+	if (Negate == 0)
 	{
 		window->m_Txt1->Clear();
 	}
-	else if (operationLocation + 1 == posOfNegate)
+	else if (op + 1 == Negate)
 	{
 		window->m_Txt1->Clear();
 		int size = equation.size();
-		for (int i = 0; i < size - posOfNegate; i++)
+		for (int i = 0; i < size - Negate; i++)
 		{
 			equation.pop_back();
 		}
 		window->m_Txt1->SetValue(equation);
 	}
-	else if (operation == "" || posOfNegate < operationLocation || operationLocation == 0)
+	else if (operation == "" || Negate < op || op == 0)
 	{
-		left = std::stoi(equation.substr(0, posOfNegate));
+		left = std::stoi(equation.substr(0, Negate));
 		left *= -1;
 		window->m_Txt1->SetValue(std::to_string(left));
 	}
-	else if (posOfNegate > operationLocation)
+	else if (Negate > op)
 	{
-		left = std::stoi(equation.substr(0, operationLocation));
-		right = std::stoi(equation.substr(operationLocation + 1));
+		left = std::stoi(equation.substr(0, op));
+		right = std::stoi(equation.substr(op + 1));
 		right *= -1;
 		window->m_Txt1->SetValue(std::to_string(left) + operation + std::to_string(right));
 	}
