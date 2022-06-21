@@ -157,6 +157,7 @@ std::string CalculatorProcessor::Equal(cMain* window)
 	{
 		Mod();
 	}
+	window->m_Txt1->Clear();
 	if (answer == "Can't divide by zero")
 	{
 		operation = "";
