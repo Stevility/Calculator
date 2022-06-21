@@ -27,7 +27,7 @@ double CalculatorProcessor::PerfOp(double left, double right, int op)
 		}
 		break;
 	}
-	}
 	return result;
+	}
 }
 

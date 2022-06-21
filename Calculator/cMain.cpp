@@ -57,6 +57,16 @@ cMain::~cMain()
 {
 }
 
+void cMain::CalcPros()
+{
+	Total = CalculatorProcessor::PerfOp(Total, Last, op);
+}
+
+
+void cMain::ShowTotal()
+{
+}
+
 void cMain::ButtonClick1(wxCommandEvent& evt)
 {
 	m_Txt1->AppendText("1");
@@ -109,6 +119,7 @@ void cMain::ButtonClick0(wxCommandEvent& evt)
 
 void cMain::ButtonClickAdd(wxCommandEvent& evt)
 {
+
 	m_Txt1->AppendText(" + ");
 }
 

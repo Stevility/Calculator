@@ -65,6 +65,9 @@ public:
 	void CalcPros();
 	void ShowTotal();
 
+	double Total;
+	double Last;
+	int op;
 
 	wxDECLARE_EVENT_TABLE();
 };
