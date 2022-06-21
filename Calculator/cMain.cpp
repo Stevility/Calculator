@@ -25,7 +25,6 @@ wxEND_EVENT_TABLE()
 
 cMain::cMain() : wxFrame(nullptr, wxID_ANY, "Calculator!", wxPoint(500, 200), wxSize(355, 500))
 {
-	ButtonFactory factory;
 
 	m_Txt1 = new wxTextCtrl(this, wxID_ANY, "", wxPoint(10, 15), wxSize(320, 70),wxTE_RIGHT);
 	m_Txt1->Disable();
@@ -104,28 +103,28 @@ void cMain::ButtonClick9(wxCommandEvent& evt)
 }
 
 void cMain::ButtonClick0(wxCommandEvent& evt)
-{
+{ 
 	m_Txt1->AppendText("0");
 }
 
 void cMain::ButtonClickAdd(wxCommandEvent& evt)
 {
-	m_Txt1->AppendText("+");
+	m_Txt1->AppendText(" + ");
 }
 
 void cMain::ButtonClickSub(wxCommandEvent& evt)
 {
-	m_Txt1->AppendText("-");
+	m_Txt1->AppendText(" - ");
 }
 
 void cMain::ButtonClickDiv(wxCommandEvent& evt)
 {
-	m_Txt1->AppendText("X");
+	m_Txt1->AppendText(" x ");
 }
 
 void cMain::ButtonClickMult(wxCommandEvent& evt)
 {
-	m_Txt1->AppendText("/");
+	m_Txt1->AppendText(" / ");
 }
 
 void cMain::ButtonClickEqual(wxCommandEvent& evt)

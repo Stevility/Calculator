@@ -7,9 +7,10 @@ class ButtonFactory : public cMain
 
 public:
 
-	void CreateAddButton()
+	wxButton* CreateAddButton()
 	{
 		addButton = new wxButton(this, 100, "+", wxPoint(250, 90), wxSize(80, 65));
+		return addButton;
 	}
 
 	void CreateSubButton()
@@ -57,4 +58,5 @@ public:
 	{
 		negativeButton = new wxButton(this, wxID_ANY, "+/-", wxPoint(90, 90), wxSize(80, 50));
 	}
+
 };
