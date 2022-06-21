@@ -1,5 +1,6 @@
 #pragma once
 #include "wx/wx.h"
+#include "CalculatorProcessor.h"
 
 class cMain : public wxFrame
 {
@@ -60,6 +61,9 @@ public:
 	void ButtonClickHex(wxCommandEvent& evt);
 	void ButtonClickDec(wxCommandEvent& evt);
 	void ButtonClickNegative(wxCommandEvent& evt);
+
+	void CalcPros();
+	void ShowTotal();
 
 
 	wxDECLARE_EVENT_TABLE();
