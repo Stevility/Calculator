@@ -57,14 +57,32 @@ cMain::~cMain()
 {
 }
 
+double cMain::getCurrentValue()
+{
+	try {
+		return std::stod(std::string(m_Txt1->GetValue().mb_str()));
+	}
+	catch (const std::invalid_argument& e)
+	{
+		return 0;
+	}
+}
+
 void cMain::CalcPros()
 {
-	Total = CalculatorProcessor::PerfOp(Total, Last, op);
+	first = CalculatorProcessor::PerfOp(first, last, op);
 }
 
 
 void cMain::ShowTotal()
 {
+	if (first == static_cast<int64_t>(first)) 
+	{
+		m_Txt1->SetValue(std::to_string(static_cast<int64_t>(first)));
+	}
+	else {
+		m_Txt1->SetValue(std::to_string(first));
+	}
 }
 
 void cMain::ButtonClick1(wxCommandEvent& evt)

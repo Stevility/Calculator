@@ -9,7 +9,6 @@ private:
 public:
 	static CalculatorProcessor* GetInstance() 
 	{
-
 		if (_pros == NULL)
 		{
 			_pros = new CalculatorProcessor();
@@ -98,8 +97,7 @@ public:
 		OpMult,
 		OpDiv
 	};
-	static double PerfOp(
-		double left, double right, int op);
+	static double PerfOp(double left, double right, int op);
 
 };
 

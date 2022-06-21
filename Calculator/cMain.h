@@ -62,11 +62,13 @@ public:
 	void ButtonClickDec(wxCommandEvent& evt);
 	void ButtonClickNegative(wxCommandEvent& evt);
 
+
+	double getCurrentValue();
 	void CalcPros();
 	void ShowTotal();
 
-	double Total;
-	double Last;
+	double first;
+	double last;
 	int op;
 
 	wxDECLARE_EVENT_TABLE();
