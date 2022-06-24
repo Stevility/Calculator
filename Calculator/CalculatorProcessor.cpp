@@ -1,5 +1,6 @@
 #include "CalculatorProcessor.h"
 #include "cMain.h"
+#include "IBaseCommand.cpp"
 
 CalculatorProcessor* CalculatorProcessor::_processor = nullptr;
 
@@ -63,37 +64,6 @@ void CalculatorProcessor::getOperands(cMain* window)
 
 }
 
-void CalculatorProcessor::Add()
-{
-	int result = left + right;
-	answer = std::to_string(result);
-}
-
-void CalculatorProcessor::Subtract()
-{
-	int result = left - right;
-	answer = std::to_string(result);
-}
-
-void CalculatorProcessor::Multiply()
-{
-	int result = left * right;
-	answer = std::to_string(result);
-}
-
-void CalculatorProcessor::Divide()
-{
-	if (right == 0)
-	{
-		answer = "Can't divide by zero";
-	}
-	else
-	{
-		int result = left / right;
-		answer = std::to_string(result);
-	}
-}
-
 void CalculatorProcessor::Mod()
 {
 	int result = left % right;
@@ -139,19 +109,15 @@ std::string CalculatorProcessor::Equal(cMain* window)
 	getOperands(window);
 	if (operation == "+")
 	{
-		Add();
 	}
 	else if (operation == "-")
 	{
-		Subtract();
 	}
 	else if (operation == "*")
 	{
-		Multiply();
 	}
 	else if (operation == "/")
 	{
-		Divide();
 	}
 	else if (operation == " % ")
 	{

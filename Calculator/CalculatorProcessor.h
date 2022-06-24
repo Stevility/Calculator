@@ -2,6 +2,7 @@
 #include "wx/wx.h"
 #include <string>
 #include "ButtonFactory.h"
+#include "IBaseCommand.h"
 
 class cMain;
 class CalculatorProcessor
@@ -15,11 +16,8 @@ private:
 	std::string operation;
 	std::string equation;
 	void getOperands(cMain* window);
-	void Add();
-	void Subtract();
-	void Multiply();
-	void Divide();
 	int OP(cMain* window);
+	std::vector<IBaseCommand*> commands;
 
 public:
 	static CalculatorProcessor* GetInstance();
