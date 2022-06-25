@@ -15,18 +15,10 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="ButtonFactoryTests.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="CalculatorProcessorTests.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-  </ItemGroup>
-  <ItemGroup>
-    <ClCompile Include="ButtonFactoryTests.cpp">
+    <ClCompile Include="ButtonFactoryTest.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="CalculatorProcessorTests.cpp">
+    <ClCompile Include="CalculatorProcessorTest.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
