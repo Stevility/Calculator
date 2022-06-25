@@ -121,36 +121,42 @@ public:
 	wxButton* createAddButton(wxWindow* Window)
 	{
 		wxButton* AddButton = new wxButton(Window, IDs::Add, " + ", wxPoint(250, 90), wxSize(80, 65));
+		AddButton->SetLabel(" + ");
 		return AddButton;
 	}
 
 	wxButton* createSubButton(wxWindow* Window)
 	{
 		wxButton* SubButton = new wxButton(Window, IDs::Sub, " - ", wxPoint(250, 155), wxSize(80, 65));
+		SubButton->SetLabel(" - ");
 		return SubButton;
 	}
 
 	wxButton* createMultButton(wxWindow* Window)
 	{
 		wxButton* MultButton = new wxButton(Window, IDs::Mult, " * ", wxPoint(250, 220), wxSize(80, 65));
+		MultButton->SetLabel(" * ");
 		return MultButton;
 	}
 
 	wxButton* createDivButton(wxWindow* Window)
 	{
 		wxButton* DivButton = new wxButton(Window, IDs::Div, " / ", wxPoint(250, 285), wxSize(80, 65));
+		DivButton->SetLabel("/");
 		return DivButton;
 	}
 
 	wxButton* createClearButton(wxWindow* Window)
 	{
 		wxButton* clearButton = new wxButton(Window, IDs::Clear, "Clear", wxPoint(10, 90), wxSize(80, 50));
+		clearButton->SetLabel("Clear");
 		return clearButton;
 	}
 
 	wxButton* createEqualButton(wxWindow* Window)
 	{
 		wxButton* equalButton = new wxButton(Window, IDs::Equal, "=", wxPoint(170, 380), wxSize(80, 65));
+		equalButton->SetLabel("=");
 		return equalButton;
 	}
 

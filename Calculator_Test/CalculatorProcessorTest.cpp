@@ -1,4 +1,6 @@
 #include "CppUnitTest.h"
+#include "../Calculator/CalculatorProcessor.h"
+#include "wx/wx.h"
 
 using namespace Microsoft::VisualStudio::CppUnitTestFramework;
 
