@@ -1,6 +1,10 @@
 #include "CalculatorProcessor.h"
 #include "cMain.h"
 #include "IBaseCommand.cpp"
+#include "AddCommand.h"
+#include "SubtractCommand.h"
+#include "MultCommand.h"
+#include "DivCommand.h"
 
 CalculatorProcessor* CalculatorProcessor::_processor = nullptr;
 
@@ -109,30 +113,51 @@ std::string CalculatorProcessor::Equal(cMain* window)
 	getOperands(window);
 	if (operation == "+")
 	{
+		AddCommand add(left, right);
+		commands.push_back((IBaseCommand*)&add);
+		int ex = commands[0]->execute();
+		commands.pop_back();
+		answer = std::to_string(ex);
 	}
 	else if (operation == "-")
 	{
+		SubtractCommand sub(left, right);
+		commands.push_back((IBaseCommand*)&sub);
+		int ex = commands[0]->execute();
+		commands.pop_back();
+		answer = std::to_string(ex);
 	}
 	else if (operation == "*")
 	{
+		MultCommand mult(left, right);
+		commands.push_back((IBaseCommand*)&mult);
+		int ex = commands[0]->execute();
+		commands.pop_back();
+		answer = std::to_string(ex);
 	}
 	else if (operation == "/")
 	{
+		if (right == 0)
+		{
+			answer = "Must not be divided by 0";
+		}
+		else
+		{
+			DivCommand div(left, right);
+			commands.push_back((IBaseCommand*)&div);
+			int ex = commands[0]->execute();
+			commands.pop_back();
+			answer = std::to_string(ex);
+		}
 	}
-	else if (operation == " % ")
+	else if (operation == "%")
 	{
 		Mod();
 	}
 	window->m_Txt1->Clear();
-	if (answer == "Can't divide by zero")
+	if (answer == "Must not be divided by 0")
 	{
-		operation = "";
 		return answer;
-	}
-	if (answer != "")
-	{
-		left = std::stoi(answer);
-		right = NULL;
 	}
 	operation = "";
 	return answer;
