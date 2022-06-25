@@ -156,31 +156,36 @@ public:
 
 	wxButton* createModButton(wxWindow* Window)
 	{
-		wxButton* modButton = new wxButton(Window, IDs::Mod, " % ", wxPoint(250, 350), wxSize(80, 30));
+		wxButton* modButton = new wxButton(Window, IDs::Mod, "%", wxPoint(250, 350), wxSize(80, 30));
+		modButton->SetLabel("%");
 		return modButton;
 	}
 
 	wxButton* createBinButton(wxWindow* Window)
 	{
 		wxButton* binButton = new wxButton(Window, IDs::Bin, "Binary", wxPoint(250, 412), wxSize(80, 33));
+		binButton->SetLabel("Binary");
 		return binButton;
 	}
 
 	wxButton* createHexButton(wxWindow* Window)
 	{
 		wxButton* hexButton = new wxButton(Window, IDs::Hex, "Hex", wxPoint(250, 380), wxSize(80, 33));
+		hexButton->SetLabel("Hex");
 		return hexButton;
 	}
 
 	wxButton* createDecButton(wxWindow* Window)
 	{
 		wxButton* decButton = new wxButton(Window, IDs::Dec, "0.01", wxPoint(170, 90), wxSize(80, 50));
+		decButton->SetLabel("0.01");
 		return decButton;
 	}
 
 	wxButton* createNegativeButton(wxWindow* Window)
 	{
 		wxButton* negativeButton = new wxButton(Window, IDs::Negative, "+/-", wxPoint(90, 90), wxSize(80, 50));
+		negativeButton->SetLabel("+/-");
 		return negativeButton;
 	}
 
