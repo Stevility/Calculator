@@ -31,5 +31,8 @@ public:
 	void GetHexadecimal(cMain* window);
 	void Negative(cMain* window);
 	void SetBaseNumber(int number);
+	void GetSin(cMain* window);
+	void GetCos(cMain* window);
+	void GetTan(cMain* window);
 };
 

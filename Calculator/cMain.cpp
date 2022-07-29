@@ -2,7 +2,7 @@
 #include "ButtonFactory.h"
 #include "CalculatorProcessor.h"
 
-cMain::cMain() : wxFrame(nullptr, wxID_ANY, "Calculator!", wxPoint(500, 200), wxSize(355, 500))
+cMain::cMain() : wxFrame(nullptr, wxID_ANY, "Calculator!", wxPoint(500, 200), wxSize(355, 550))
 {
 	processor = CalculatorProcessor::GetInstance();
 	m_Txt1 = new wxTextCtrl(this, wxID_ANY, "", wxPoint(10, 15), wxSize(320, 70), wxTE_RIGHT);
@@ -57,7 +57,7 @@ void cMain::ButtonClicked(wxCommandEvent& evt)
 		CreateButtons();
 
 	}
-	else if (id != ButtonFactory::IDs::Hex && id != ButtonFactory::IDs::Bin && id != ButtonFactory::IDs::Dec && id != ButtonFactory::IDs::Negative)
+	else if (id != ButtonFactory::IDs::Hex && id != ButtonFactory::IDs::Bin && id != ButtonFactory::IDs::Dec && id != ButtonFactory::IDs::Negative && id != ButtonFactory::IDs::Sin && id != ButtonFactory::IDs::Cos && id != ButtonFactory::IDs::Tan)
 	{
 		*m_Txt1 << allButtons[id]->GetLabel();
 		if (id == ButtonFactory::IDs::Add || id == ButtonFactory::IDs::Sub || id == ButtonFactory::IDs::Mult || id == ButtonFactory::IDs::Div || id == ButtonFactory::IDs::Mod)
@@ -82,5 +82,17 @@ void cMain::ButtonClicked(wxCommandEvent& evt)
 	{
 		*m_Txt1 << allButtons[id]->GetLabel();
 		processor->Negative(this);
+	}
+	else if (id == ButtonFactory::IDs::Sin)
+	{
+		processor->GetSin(this);
+	}
+	else if (id == ButtonFactory::IDs::Cos)
+	{
+		processor->GetCos(this);
+	}
+	else if (id == ButtonFactory::IDs::Tan)
+	{
+		processor->GetTan(this);
 	}
 }

@@ -5,6 +5,9 @@
 #include "SubtractCommand.h"
 #include "MultCommand.h"
 #include "DivCommand.h"
+#include <math.h>
+
+#define PI 3.14159265
 
 CalculatorProcessor* CalculatorProcessor::_processor = nullptr;
 
@@ -168,6 +171,7 @@ void CalculatorProcessor::GetDecimal(cMain* window)
 	window->m_Txt1->SetValue(answer);
 }
 
+
 void CalculatorProcessor::GetBinary(cMain* window)
 {
 	std::string result = "";
@@ -187,6 +191,39 @@ void CalculatorProcessor::GetBinary(cMain* window)
 		number /= 2;
 	}
 	window->m_Txt1->SetValue(result);
+}
+
+void CalculatorProcessor::GetSin(cMain* window)
+{
+	if (answer == "")
+	{
+		window->m_Txt1->Clear();
+		window->m_Txt1->AppendText("Must enter number");
+		return;
+	}
+
+}
+
+void CalculatorProcessor::GetCos(cMain* window)
+{
+	if (answer == "")
+	{
+		window->m_Txt1->Clear();
+		window->m_Txt1->AppendText("Must enter number");
+		return;
+	}
+	double fCos = 5.0;
+	cos(fCos);
+	std::cout << sin(fCos);
+	answer = std::to_string(fCos);
+}
+
+void CalculatorProcessor::GetTan(cMain* window)
+{
+	double fSin = 5;
+	sin(fSin);
+	std::cout << sin(fSin);
+	answer = std::to_string(fSin);
 }
 
 void CalculatorProcessor::GetHexadecimal(cMain* window)
